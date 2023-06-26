@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import TheHeaderDropdown from "@/components/TheHeaderDropdown.vue";
-import { inject } from "vue";
-import type { CategoryItem } from "@/types";
-const categoryList = inject("categoryList") as CategoryItem[];
 </script>
 
 <style scoped>
@@ -33,16 +30,7 @@ const categoryList = inject("categoryList") as CategoryItem[];
       </form>
     </section>
     <section class="header-dropdown-and-cart">
-      <div class="header-dropdown">
-        <button class="button categories-button">Categories<img src="/site-images/dropdown.png" alt="Button Image"></button>
-        <ul>
-          <li v-for="category in categoryList" :key="category.categoryId">
-            <router-link :to="'/category/' + category.name">
-              {{ category.name }}
-            </router-link>
-          </li>
-        </ul>
-      </div>
+      <the-header-dropdown></the-header-dropdown>
       <button class="button cart-button"><img src="/site-images/cart-3.png"></button>
       <button class="button">Login</button>
     </section>

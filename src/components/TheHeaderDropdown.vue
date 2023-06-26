@@ -44,13 +44,13 @@ const categoryList = inject("categoryList") as CategoryItem[];
 
 <template>
   <div class="header-dropdown">
-    <button class="button categories-button">Categories</button>
-    <ul>
-      <li v-for="category in categoryList" :key="category.categoryId">
-        <router-link :to="'/category/' + category.name">
-          {{ category.name }}
-        </router-link>
-      </li>
-    </ul>
-  </div>
+          <button class="button categories-button">Categories<img src="/site-images/dropdown.png" alt="Button Image"></button>
+          <ul>
+            <li v-for="category in categoryList" :key="category.categoryId">
+              <router-link :to="'/category/' + category.name">
+                {{ category.name }}
+              </router-link>
+            </li>
+          </ul>
+        </div>
 </template>
