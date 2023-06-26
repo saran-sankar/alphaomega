@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { inject } from "vue";
+
 import type { CategoryItem } from "@/types";
-const categoryList = inject("categoryList") as CategoryItem[];
+let response = await fetch("http://localhost:8080/SaranBookstoreFetch/api/categories/");
+let data = await response.json();
+let categoryList = data as CategoryItem[];
 const categoryImageFileName = function (category: CategoryItem): string {
   let name = category.name.toLowerCase();
   name = name.replace(/ /g, "-");
