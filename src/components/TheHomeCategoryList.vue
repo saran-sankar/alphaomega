@@ -39,6 +39,10 @@ const categoryImageFileName = function (category: CategoryItem): string {
   transform: translateY(-3em);
   margin-bottom: -2em;
 }
+
+a{
+  text-decoration: none;
+}
 </style>
 
 <template>

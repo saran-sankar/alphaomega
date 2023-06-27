@@ -7,9 +7,9 @@ let categoryList = data as CategoryItem[];
 
 <style scoped>
 .category-nav {
-  width: 200px;
+  width: 300px;
   /* Adjust the width as needed */
-  height: 400px;
+  min-height: 79.5vh;
   background-color: var(--neutral-color);
 }
 
@@ -17,18 +17,19 @@ let categoryList = data as CategoryItem[];
   list-style-type: none;
   padding: 0;
   margin: 0;
+  font-size: 20px;
 }
 
 .button.category-button.router-link-active {
   background-color: black;
-  padding: 10px;
+  padding: 20px;
   display: block;
   text-decoration: none;
 }
 
 .button.category-button {
   background-color: var(--neutral-color);
-  padding: 10px;
+  padding: 20px;
   display: block;
   text-decoration: none;
 }
@@ -36,7 +37,7 @@ let categoryList = data as CategoryItem[];
 .button.category-button:hover,
 .button.category-button:active {
   background-color: black;
-  padding: 10px;
+  padding: 20px;
   display: block;
   text-decoration: none;
 }

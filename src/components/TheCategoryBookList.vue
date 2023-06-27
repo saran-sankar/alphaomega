@@ -12,7 +12,12 @@ ul {
   display: flex;
   flex-wrap: wrap;
   padding: 1em;
-  gap: 1em;
+  gap: 3em;
+  height:400px; /* mysterious! */
+}
+
+li{
+width:240px;
 }
 </style>
 

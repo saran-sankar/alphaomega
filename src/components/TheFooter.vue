@@ -27,6 +27,15 @@ footer {
   border: none;
   padding: 0;
 }
+
+a{
+text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
 </style>
 
 <template>

@@ -12,7 +12,21 @@ const bookImageFileName = function (book: BookItem): string {
 };
 </script>
 <style scoped>
+.book-image {
+  position: relative;
+}
 
+.book-image button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, -10%);
+  z-index: 2;
+  padding: 0;
+  background-color: transparent;
+  width: 100px; /* Increase the width as desired */
+  height: 50px; /* Increase the height as desired */
+}
 </style>
 
 <template>
@@ -22,7 +36,7 @@ const bookImageFileName = function (book: BookItem): string {
         :src="'/book-images/' + bookImageFileName(props.book)"
         :alt="book.title"
       />
-      <button class="button"><img src="/site-images/read-now.png" /></button>
+      <button v-if="props.book.isPublic" class="button"><img src="/site-images/read-now.png" /></button>
     </div>
     <div class="book-title">{{ book.title }}</div>
     <div class="book-author">{{ book.author }}</div>

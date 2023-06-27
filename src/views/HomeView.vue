@@ -32,6 +32,12 @@ import TheHomeCategoryList from "@/components/TheHomeCategoryList.vue";
   padding: 0;
   background-color: transparent;
 }
+
+.hero-image {
+  width: 100%;
+  max-width: 100vw;
+}
+
 </style>
 <template>
 <div class="home-page">
