@@ -3,7 +3,25 @@ import TheHeaderDropdown from "@/components/TheHeaderDropdown.vue";
 </script>
 
 <style scoped>
+.cart-button {
+  position: relative;
+}
 
+.cart-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white; /* Customize the text color */
+  padding: 1px 2px; /* Customize the padding */
+  border-radius: 50%; /* Make it circular */
+  font-size: 12px; /* Customize the font size */
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between the image and text */
+}
 </style>
 
 <template>
@@ -31,8 +49,14 @@ import TheHeaderDropdown from "@/components/TheHeaderDropdown.vue";
     </section>
     <section class="header-dropdown-and-cart">
       <the-header-dropdown></the-header-dropdown>
-      <button class="button cart-button"><img src="/site-images/cart-3.png"></button>
-      <button class="button">Login</button>
+      <button class="button cart-button">
+        <img src="/site-images/cart-3.png">
+        <span class="cart-number">2</span>
+      </button>
+      <button class="button login-button">
+        <img src="/site-images/login.png">
+        <span class="login-name">Saran</span>
+      </button>
     </section>
   </header>
 </template>
