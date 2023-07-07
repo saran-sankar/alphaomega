@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import type { BookItem } from "@/types";
 const props = defineProps<{
   book: BookItem;
@@ -10,6 +9,8 @@ const bookImageFileName = function (book: BookItem): string {
   name = name.replace(/'/g, "");
   return `${name}.jpeg`;
 };
+import { useCartStore } from '@/stores/cart'
+const cartStore = useCartStore();
 </script>
 <style scoped>
 .book-image {
@@ -42,7 +43,7 @@ const bookImageFileName = function (book: BookItem): string {
     <div class="book-author">{{ book.author }}</div>
     <div class="book-price">${{ (book.price / 100).toFixed(2) }}</div>
     <div class="add-to-cart">
-      <button class="button"><img src="/site-images/add-to-cart.png" /></button>
+      <button class="button" @click="cartStore.addToCart(book)"><img src="/site-images/add-to-cart.png" /></button>
     </div>
   </li>
 </template>

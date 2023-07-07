@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import TheHeaderDropdown from "@/components/TheHeaderDropdown.vue";
+import { useCartStore } from '@/stores/cart';
+const cartStore = useCartStore();
 </script>
 
 <style scoped>
@@ -51,7 +53,7 @@ import TheHeaderDropdown from "@/components/TheHeaderDropdown.vue";
       <the-header-dropdown></the-header-dropdown>
       <button class="button cart-button">
         <img src="/site-images/cart-3.png">
-        <span class="cart-number">2</span>
+        <span class="cart-number">{{ cartStore.count }}</span>
       </button>
       <button class="button login-button">
         <img src="/site-images/login.png">
