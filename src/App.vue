@@ -16,11 +16,9 @@ main {
 </style>
 
 <template>
-  <suspense>
   <div id="app">
     <the-header></the-header>
     <router-view :key="route.fullPath"></router-view>
     <the-footer></the-footer>
   </div>
-  </suspense>
 </template>

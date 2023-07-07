@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { defineProps } from "vue"; // needed if you don't want an error below
-import type { BookItem } from "@/types";
 import CategoryBookListItem from "@/components/CategoryBookListItem.vue";
-const props = defineProps<{
-  bookList: BookItem[];
-}>();
+import { useBookStore } from "../stores/book";
+const bookStore = useBookStore();
 </script>
 
 <style scoped>
@@ -23,7 +20,7 @@ width:240px;
 
 <template>
   <ul>
-    <template v-for="book in props.bookList" :key="book.bookId">
+    <template v-for="book in bookStore.bookList" :key="book.bookId">
       <category-book-list-item :book="book"></category-book-list-item>
     </template>
   </ul>
