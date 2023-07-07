@@ -50,7 +50,7 @@ a{
       <router-link :to="'../category/' + category.name">
         <section class="category-box">
         <img
-          :src="'/category-images/' + categoryImageFileName(category)"
+          :src="'/SaranBookstoreState/category-images/' + categoryImageFileName(category)"
           :alt="category.name + ' category'"
           class="category-image"
         />
