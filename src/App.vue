@@ -3,6 +3,9 @@ import { RouterView, useRoute } from "vue-router";
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
 const route = useRoute();
+import { useCategoryStore } from "./stores/category";
+const categoryStore = useCategoryStore();
+categoryStore.fetchCategories();
 </script>
 
 <style>

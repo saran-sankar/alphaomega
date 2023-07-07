@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import type { CategoryItem } from "@/types";
-import { apiUrl } from "@/api"
-let response = await fetch(apiUrl + "/categories/");
-let data = await response.json();
-let categoryList = data as CategoryItem[];
+import { useCategoryStore } from "../stores/category";
+const categoryStore = useCategoryStore();
 </script>
 
 <style scoped>
@@ -47,7 +44,7 @@ let categoryList = data as CategoryItem[];
 <template>
   <nav class="category-nav">
     <ul class="category-buttons">
-      <li v-for="category in categoryList" :key="category.categoryId">
+      <li v-for="category in categoryStore.categoryList" :key="category.categoryId">
         <router-link
             :to="'/category/' + category.name"
             class="button category-button"

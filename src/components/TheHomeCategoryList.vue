@@ -1,10 +1,7 @@
 <script setup lang="ts">
-
 import type { CategoryItem } from "@/types";
-import { apiUrl } from "@/api"
-let response = await fetch(apiUrl + "/categories/");
-let data = await response.json();
-let categoryList = data as CategoryItem[];
+import { useCategoryStore } from "../stores/category";
+const categoryStore = useCategoryStore();
 const categoryImageFileName = function (category: CategoryItem): string {
   let name = category.name.toLowerCase();
   name = name.replace(/ /g, "-");
@@ -49,7 +46,7 @@ a{
 <template>
   <ul>
     <div class="category-image-items">
-    <li v-for="category in categoryList" :key="category.categoryId">
+    <li v-for="category in categoryStore.categoryList" :key="category.categoryId">
       <router-link :to="'../category/' + category.name">
         <section class="category-box">
         <img
