@@ -1,7 +1,8 @@
 <script setup lang="ts">
 
 import type { CategoryItem } from "@/types";
-let response = await fetch("http://localhost:8080/SaranBookstoreFetch/api/categories/");
+import { apiUrl } from "@/api"
+let response = await fetch(apiUrl + "/categories/");
 let data = await response.json();
 let categoryList = data as CategoryItem[];
 const categoryImageFileName = function (category: CategoryItem): string {
