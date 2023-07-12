@@ -1,5 +1,5 @@
 {
-  "name": "saran-bookstore-state-client",
+  "name": "saran-bookstore-session-client",
   "version": "0.0.0",
   "private": true,
   "scripts": {

@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
-  base: '/SaranBookstoreState',
+  base: '/SaranBookstoreSession',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

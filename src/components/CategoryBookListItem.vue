@@ -34,7 +34,7 @@ const cartStore = useCartStore();
   <li class="book-box">
     <div class="book-image">
       <img
-        :src="'/SaranBookstoreState/book-images/' + bookImageFileName(props.book)"
+        :src="'/SaranBookstoreSession/book-images/' + bookImageFileName(props.book)"
         :alt="book.title"
       />
       <button v-if="props.book.isPublic" class="button"><img src="/site-images/read-now.png" /></button>
