@@ -51,10 +51,12 @@ const cartStore = useCartStore();
     </section>
     <section class="header-dropdown-and-cart">
       <the-header-dropdown></the-header-dropdown>
+      <router-link to="/cart">
       <button class="button cart-button">
         <img src="/site-images/cart-3.png">
         <span class="cart-number">{{ cartStore.count }}</span>
       </button>
+      </router-link>
       <button class="button login-button">
         <img src="/site-images/login.png">
         <span class="login-name">Saran</span>

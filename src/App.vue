@@ -13,6 +13,11 @@ main {
   display: flex;
   flex-direction: column;
 }
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
 </style>
 
 <template>
