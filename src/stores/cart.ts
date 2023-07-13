@@ -21,6 +21,13 @@ export const useCartStore = defineStore('CartStore', {
         count(): number {
             console.log(this.cart.numberOfItems)
             return this.cart.numberOfItems
+        },
+        subtotal(): number{
+            let subTotal = 0
+            for (const item of this.cart.items){
+                subTotal += item.quantity * item.book.price / 100;
+            }
+            return subTotal
         }
     },
 

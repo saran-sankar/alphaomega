@@ -4,13 +4,25 @@ const categoryStore = useCategoryStore();
 </script>
 
 <style scoped>
-.header-dropdown {
-  position: relative;
+.categories-button {
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.categories-button img {
+    margin-left: 5px;
+    /* Adjust the spacing between text and image */
+    vertical-align: middle;
+    /* Align the image vertically */
 }
 
 .categories-button {
   margin-top: 0.25em;
   background-color: var(--primary-color-dark);
+}
+.header-dropdown {
+  position: relative;
 }
 
 .header-dropdown ul {

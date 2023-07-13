@@ -94,6 +94,7 @@ img {
 
 .cart-book-price {
   padding-left: 1em;
+  padding-right: 1em;
   text-align: right;
 }
 
@@ -122,25 +123,9 @@ img {
 .icon-button {
   border: none;
   cursor: pointer;
-}
-
-.inc-button {
-  font-size: 1.125rem;
-  color: var(--primary-color);
-  margin-right: 0.25em;
-}
-
-.inc-button:hover {
-  color: var(--primary-color-dark);
-}
-
-.dec-button {
-  font-size: 1.125rem;
-  color: #ccc;
-}
-
-.dec-button:hover {
-  color: #aaa;
+  background-color: transparent;
+  width: 2.0em;
+  height: 2.0em;
 }
 
 /* Chevron buttons */
@@ -193,18 +178,19 @@ select {
           </div>
           <div class="cart-book-quantity">
             <span class="quantity">{{ item.quantity }}</span
-            >&nbsp;
+            >&nbsp;&nbsp;
             <button
               class="icon-button inc-button"
               @click="updateCart(item.book, item.quantity + 1)"
             >
-              <i class="fas fa-plus-circle"></i>
+              <i class="fas fa-plus-circle"><img src="/site-images/plus.png"></i>
             </button>
             <button
               class="icon-button dec-button"
               @click="updateCart(item.book, item.quantity - 1)"
             >
-              <i class="fas fa-minus-circle"></i>
+              <i v-if="item.quantity > 1" class="fas fa-minus-circle"><img src="/site-images/minus.png"></i>
+              <i v-else class="fas fa-trash"><img src="/site-images/trash.png"></i>
             </button>
           </div>
           <div class="cart-book-subtotal">${{ item.quantity * item.book.price / 100}}</div>
