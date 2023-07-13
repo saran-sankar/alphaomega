@@ -12,7 +12,7 @@ const bookImageFileName = function (book: BookItem): string {
 const bookImagePrefix = `${import.meta.env.BASE_URL}/book-images`;
 
 const updateCart = function (book: BookItem, quantity: number) {
-  cartStore.cart.update(book, quantity);
+  cartStore.updateBookQuantity(book, quantity);
 };
 </script>
 
@@ -207,7 +207,7 @@ select {
               <i class="fas fa-minus-circle"></i>
             </button>
           </div>
-          <div class="cart-book-subtotal">$3.98</div>
+          <div class="cart-book-subtotal">${{ item.quantity * item.book.price / 100}}</div>
         </li>
         <li class="line-sep"></li>
       </template>
